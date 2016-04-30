@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Martin Davtyan</title>
+    <link>https://martinthenext.github.io/</link>
+    <description>Recent content on Martin Davtyan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Martin Davtyan</copyright>
+    <lastBuildDate>Fri, 29 Apr 2016 22:30:44 +0100</lastBuildDate>
+    <atom:link href="https://martinthenext.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ode to Hugo and itertools</title>
+      <link>https://martinthenext.github.io/post/hugo/</link>
+      <pubDate>Fri, 29 Apr 2016 22:30:44 +0100</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/hugo/</guid>
+      <description>&lt;p&gt;If you are reading this, I actually succeeded in setting up &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; for static site generation. It is written in Go, fast and cross-platform.&lt;/p&gt;
+
+&lt;p&gt;Traditionally, I judge website designs by the way they can highlight code. This code, by the way, is the best thing I have seen in a year or so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def iter_split_by(n, iterator):                         
+    &amp;quot;&amp;quot;&amp;quot; Split an iterator into groups of n elements                                  
+     Examples:                                                                        
+        &amp;gt;&amp;gt;&amp;gt; [i for i in iter_split_by(3, iter(range(10)))]                            
+        [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]]                                       
+
+    &amp;quot;&amp;quot;&amp;quot;                                                                               
+    slices = (list(islice(iterator, n)) for _ in count())                             
+    return takewhile(bool, slices)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Look how lazy it is. Beautiful.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

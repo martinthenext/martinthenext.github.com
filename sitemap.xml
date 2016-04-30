@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://martinthenext.github.io/</loc>
+    <lastmod>2016-04-29T22:30:44+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://martinthenext.github.io/post/hugo/</loc>
+    <lastmod>2016-04-29T22:30:44+01:00</lastmod>
+  </url>
+  
+</urlset>
