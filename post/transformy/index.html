@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Ode to Hugo and itertools &middot; Martin Davtyan</title>
+        <title>String transformation with one example &middot; Martin Davtyan</title>
         <meta name="description" content="">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
@@ -60,10 +60,10 @@
 <div class="container">
     <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Ode to Hugo and itertools</h1>
+    <h1 class="post-title" itemprop="name headline">String transformation with one example</h1>
     
     <p class="post-date">
-        <span>Published <time datetime="2016-04-29" itemprop="datePublished">Fri, Apr 29, 2016</time></span>
+        <span>Published <time datetime="2015-04-26" itemprop="datePublished">Sun, Apr 26, 2015</time></span>
         <span>by</span>
         <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
             <span itemprop="name">
@@ -76,49 +76,39 @@
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>If you are reading this, I actually succeeded in setting up <a href="https://gohugo.io">Hugo</a> for static site generation. It is written in Go, fast and cross-platform.</p>
+    <p>The <a href="https://news.ycombinator.com/item?id=9432949">recent post</a> on Hacker News featured <a href="http://www.transformy.io">Transformy</a>, an application that allows you to transform strings e.g., change date or name formatting, without having to program anything. Instead you give it an example by transforming <em>one</em> string from your batch. It tries to infer the rule that you used and apply it to all other strings.</p>
 
-<p>Traditionally, I judge website designs by the way they can highlight code. This code, by the way, is the best thing I have seen in a year or so:</p>
+<p>I was so excited about this I killed some time and reproduced similar functionality with a hudgred lines in Python, see <a href="https://gist.github.com/martinthenext/fc989ffa6ec84ee09962">here</a>. By far the script reproduces examples from the Transformly website:</p>
 
-<pre><code>def iter_split_by(n, iterator):                         
-    &quot;&quot;&quot; Split an iterator into groups of n elements                                  
-     Examples:                                                                        
-        &gt;&gt;&gt; [i for i in iter_split_by(3, iter(range(10)))]                            
-        [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]]                                       
-
-    &quot;&quot;&quot;                                                                               
-    slices = (list(islice(iterator, n)) for _ in count())                             
-    return takewhile(bool, slices)
+<pre><code>&gt;&gt;&gt; transformer = StringTransformer()
+&gt;&gt;&gt; transformer.train_by_example('Joel, 1949, piano', '{name: \'Joel\', instrument: \'piano\'}')
+&gt;&gt;&gt; print transformer.transform('Lennon, 1940, guitar')
+{name: 'Lennon', instrument: 'guitar'}
 </code></pre>
 
-<p>Look how lazy it is. Beautiful.</p>
+<p>It is obviously very limited in functionality, mainly because it requires all strings in the batch to have a <em>very</em> similar structure. Another problem is ambiguity: when you see an example like <code>02-02-2014 -&gt; Day 02 Month 02 Year 2014</code> you cannot infer which position in the first string corresponds to days.</p>
+
+<p>Naturally, this kind of ambiguity could be resolved by looking at multiple examples. This is what a (seemingly) more advanced tool, Microsoft Excel <a href="https://support.office.com/en-us/article/Use-AutoFill-and-Flash-Fill-2e79a709-c814-4b27-8bc2-c4dc84d49464?ui=de-DE&amp;rs=en-001&amp;ad=DE&amp;fromAR=1&amp;omkt=en-001">FlashFill</a> can do. I could think of several ways to improve my script allowing for multiple examples in an imperative fashion, but something tells me that is not the way. It would be way cooler to rephrase the entire problem in probabilistic terms.</p>
 
 </div>
 
         <footer class="post-footer clearfix">
     
-        <p class="post-tags">
-            <span>Tagged:</span>
-            
-                 <a href="/tags/python/">python</a>
-            
-        </p>
-    
 
     <div class="share">
-        <a class="icon-twitter" href="http://twitter.com/share?text=Ode%20to%20Hugo%20and%20itertools&url=https%3a%2f%2fmartinthenext.github.io%2fpost%2fhugo%2f"
+        <a class="icon-twitter" href="http://twitter.com/share?text=String%20transformation%20with%20one%20example&url=https%3a%2f%2fmartinthenext.github.io%2fpost%2ftransformy%2f"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
             <i class="fa fa-twitter"></i>
             <span class="hidden">Twitter</span>
         </a>
 
-        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmartinthenext.github.io%2fpost%2fhugo%2f"
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmartinthenext.github.io%2fpost%2ftransformy%2f"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
             <i class="fa fa-facebook"></i>
             <span class="hidden">Facebook</span>
         </a>
 
-        <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2fmartinthenext.github.io%2fpost%2fhugo%2f"
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2fmartinthenext.github.io%2fpost%2ftransformy%2f"
            onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
            <i class="fa fa-google-plus"></i>
             <span class="hidden">Google+</span>
@@ -131,9 +121,9 @@
         <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'martindavtyan';
-    var disqus_identifier = 'https:\/\/martinthenext.github.io\/post\/hugo\/';
-    var disqus_title = 'Ode to Hugo and itertools';
-    var disqus_url = 'https:\/\/martinthenext.github.io\/post\/hugo\/';
+    var disqus_identifier = 'https:\/\/martinthenext.github.io\/post\/transformy\/';
+    var disqus_title = 'String transformation with one example';
+    var disqus_url = 'https:\/\/martinthenext.github.io\/post\/transformy\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

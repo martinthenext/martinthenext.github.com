@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Ode to Hugo and itertools &middot; Martin Davtyan</title>
+        <title>Data Analysis of Federated Data &middot; Martin Davtyan</title>
         <meta name="description" content="">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
@@ -60,10 +60,10 @@
 <div class="container">
     <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
         <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Ode to Hugo and itertools</h1>
+    <h1 class="post-title" itemprop="name headline">Data Analysis of Federated Data</h1>
     
     <p class="post-date">
-        <span>Published <time datetime="2016-04-29" itemprop="datePublished">Fri, Apr 29, 2016</time></span>
+        <span>Published <time datetime="2014-03-18" itemprop="datePublished">Tue, Mar 18, 2014</time></span>
         <span>by</span>
         <span itemscope="" itemprop="author" itemtype="http://schema.org/Person">
             <span itemprop="name">
@@ -76,49 +76,53 @@
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>If you are reading this, I actually succeeded in setting up <a href="https://gohugo.io">Hugo</a> for static site generation. It is written in Go, fast and cross-platform.</p>
+    <p>There has been a lot of reading and searchnig recently, with no particular results. As people of science keep repeating, lack of results is a result in itself, so I&rsquo;ll just write down what was happening to try to understand where to go further.</p>
 
-<p>Traditionally, I judge website designs by the way they can highlight code. This code, by the way, is the best thing I have seen in a year or so:</p>
+<p>I was trying to find a field of Statistics or Machine Learning which deals with data gathered from different data sources.</p>
 
-<pre><code>def iter_split_by(n, iterator):                         
-    &quot;&quot;&quot; Split an iterator into groups of n elements                                  
-     Examples:                                                                        
-        &gt;&gt;&gt; [i for i in iter_split_by(3, iter(range(10)))]                            
-        [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]]                                       
+<ol>
+<li><p>Asked the professor who deals with Missing Data. Doesn&rsquo;t know of any research in that field.</p></li>
 
-    &quot;&quot;&quot;                                                                               
-    slices = (list(islice(iterator, n)) for _ in count())                             
-    return takewhile(bool, slices)
-</code></pre>
+<li><p>Aksed the professor who deals with Regression. Same.</p></li>
 
-<p>Look how lazy it is. Beautiful.</p>
+<li><p>Asked <a href="http://stats.stackexchange.com/questions/89086/statistical-analysis-on-several-data-sources-possible">people on CrossValidated</a>. Nothing rings the bell.</p></li>
+</ol>
+
+<p>The closest resource I could find that talks about dealing with multiple data sources when there is an explicit knowledge about their structure is <a href="http://ontolog.cim3.net/cgi-bin/wiki.pl?OntologySummit2014_Tackling_Variety_In_BigData_CommunityInput">Ontology Summit</a>.</p>
+
+<p>Also, there are some pointers to places where ontologies or other knowledge respesentation could be used with data analysis:</p>
+
+<ol>
+<li><p>Graphical Models: DAGs represent causal relationsips between variables.</p></li>
+
+<li><p><a href="www.geneontology.org">Gene Ontology</a> is somehow used in data analysis.</p></li>
+</ol>
+
+<p>But the main idea I got from searching for connections between Statistics and Ontologies is that the latter is way harder to find. Hence, if searching for data analysis problems in a domain where Ontologies are used must be easier than searching for usage of Onotolgies over all data analysis applications.</p>
+
+<p>By now, situation is pretty severe. I have an idea about some problem being very important to solve, but cannot find any people solving it. This can only be resolved by me finding <em>data</em> to solve the problem myself. <strong>Data should be probably from the data integration world</strong>, for the reason highlighted earlier, and the offer should be to perform statistical analysis on it. I&rsquo;m trying to look into multiple projects for integrating biomedical data, included automated diagnosis projects. I should also take a look at different industries.</p>
+
+<p>More news to come.</p>
 
 </div>
 
         <footer class="post-footer clearfix">
     
-        <p class="post-tags">
-            <span>Tagged:</span>
-            
-                 <a href="/tags/python/">python</a>
-            
-        </p>
-    
 
     <div class="share">
-        <a class="icon-twitter" href="http://twitter.com/share?text=Ode%20to%20Hugo%20and%20itertools&url=https%3a%2f%2fmartinthenext.github.io%2fpost%2fhugo%2f"
+        <a class="icon-twitter" href="http://twitter.com/share?text=Data%20Analysis%20of%20Federated%20Data&url=https%3a%2f%2fmartinthenext.github.io%2fpost%2fsearch%2f"
             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
             <i class="fa fa-twitter"></i>
             <span class="hidden">Twitter</span>
         </a>
 
-        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmartinthenext.github.io%2fpost%2fhugo%2f"
+        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmartinthenext.github.io%2fpost%2fsearch%2f"
             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
             <i class="fa fa-facebook"></i>
             <span class="hidden">Facebook</span>
         </a>
 
-        <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2fmartinthenext.github.io%2fpost%2fhugo%2f"
+        <a class="icon-google-plus" href="https://plus.google.com/share?url=https%3a%2f%2fmartinthenext.github.io%2fpost%2fsearch%2f"
            onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
            <i class="fa fa-google-plus"></i>
             <span class="hidden">Google+</span>
@@ -131,9 +135,9 @@
         <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'martindavtyan';
-    var disqus_identifier = 'https:\/\/martinthenext.github.io\/post\/hugo\/';
-    var disqus_title = 'Ode to Hugo and itertools';
-    var disqus_url = 'https:\/\/martinthenext.github.io\/post\/hugo\/';
+    var disqus_identifier = 'https:\/\/martinthenext.github.io\/post\/search\/';
+    var disqus_title = 'Data Analysis of Federated Data';
+    var disqus_url = 'https:\/\/martinthenext.github.io\/post\/search\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

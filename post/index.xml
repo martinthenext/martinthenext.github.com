@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Martin Davtyan</copyright>
-    <lastBuildDate>Fri, 29 Apr 2016 22:30:44 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 29 Apr 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://martinthenext.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ode to Hugo and itertools</title>
       <link>https://martinthenext.github.io/post/hugo/</link>
-      <pubDate>Fri, 29 Apr 2016 22:30:44 +0100</pubDate>
+      <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://martinthenext.github.io/post/hugo/</guid>
       <description>&lt;p&gt;If you are reading this, I actually succeeded in setting up &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; for static site generation. It is written in Go, fast and cross-platform.&lt;/p&gt;
@@ -32,6 +32,358 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Look how lazy it is. Beautiful.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>String transformation with one example</title>
+      <link>https://martinthenext.github.io/post/transformy/</link>
+      <pubDate>Sun, 26 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/transformy/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://news.ycombinator.com/item?id=9432949&#34;&gt;recent post&lt;/a&gt; on Hacker News featured &lt;a href=&#34;http://www.transformy.io&#34;&gt;Transformy&lt;/a&gt;, an application that allows you to transform strings e.g., change date or name formatting, without having to program anything. Instead you give it an example by transforming &lt;em&gt;one&lt;/em&gt; string from your batch. It tries to infer the rule that you used and apply it to all other strings.&lt;/p&gt;
+
+&lt;p&gt;I was so excited about this I killed some time and reproduced similar functionality with a hudgred lines in Python, see &lt;a href=&#34;https://gist.github.com/martinthenext/fc989ffa6ec84ee09962&#34;&gt;here&lt;/a&gt;. By far the script reproduces examples from the Transformly website:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; transformer = StringTransformer()
+&amp;gt;&amp;gt;&amp;gt; transformer.train_by_example(&#39;Joel, 1949, piano&#39;, &#39;{name: \&#39;Joel\&#39;, instrument: \&#39;piano\&#39;}&#39;)
+&amp;gt;&amp;gt;&amp;gt; print transformer.transform(&#39;Lennon, 1940, guitar&#39;)
+{name: &#39;Lennon&#39;, instrument: &#39;guitar&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It is obviously very limited in functionality, mainly because it requires all strings in the batch to have a &lt;em&gt;very&lt;/em&gt; similar structure. Another problem is ambiguity: when you see an example like &lt;code&gt;02-02-2014 -&amp;gt; Day 02 Month 02 Year 2014&lt;/code&gt; you cannot infer which position in the first string corresponds to days.&lt;/p&gt;
+
+&lt;p&gt;Naturally, this kind of ambiguity could be resolved by looking at multiple examples. This is what a (seemingly) more advanced tool, Microsoft Excel &lt;a href=&#34;https://support.office.com/en-us/article/Use-AutoFill-and-Flash-Fill-2e79a709-c814-4b27-8bc2-c4dc84d49464?ui=de-DE&amp;amp;rs=en-001&amp;amp;ad=DE&amp;amp;fromAR=1&amp;amp;omkt=en-001&#34;&gt;FlashFill&lt;/a&gt; can do. I could think of several ways to improve my script allowing for multiple examples in an imperative fashion, but something tells me that is not the way. It would be way cooler to rephrase the entire problem in probabilistic terms.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NY times agrees</title>
+      <link>https://martinthenext.github.io/post/ny-times-agrees/</link>
+      <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/ny-times-agrees/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.nytimes.com/2014/10/05/magazine/can-big-data-tell-us-what-clinical-trials-dont.html?ref=health&amp;amp;_r=0&#34;&gt;This&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also, there is a &lt;a href=&#34;http://www.meetup.com/Swiss-eHealth-Club/&#34;&gt;recent meetup&lt;/a&gt; on using Watson in healthcare.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Jung&#39;s personality types</title>
+      <link>https://martinthenext.github.io/post/jung/</link>
+      <pubDate>Mon, 16 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/jung/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://davtyan.org/blog-images/jung.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://archive.org/details/collectedpaperso00junguoft&#34;&gt;Collected Papers on Analytical Psychology (1920)&lt;/a&gt;, very interesting and connects with ideas from &lt;a href=&#34;http://en.wikipedia.org/wiki/Zen_and_the_Art_of_Motorcycle_Maintenance&#34;&gt;ZAMM&lt;/a&gt; in various ways.&lt;/p&gt;
+
+&lt;p&gt;To me, Bradbury&amp;rsquo;s &lt;a href=&#34;http://en.wikipedia.org/wiki/Dandelion_Wine&#34;&gt;Dandelion Wine&lt;/a&gt; is an ultimate introduction to extraversion and a description of a culture built on extraversion. Jung says in &lt;a href=&#34;https://www.youtube.com/watch?v=0aoDdAIIRTw&#34;&gt;this interview&lt;/a&gt; that the U. S. is &amp;ldquo;extraverted like hell&amp;rdquo; :) Russia, on the contrary, seems culturally introverted to me.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pigeon drawing</title>
+      <link>https://martinthenext.github.io/post/pigeon-drawing/</link>
+      <pubDate>Thu, 08 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/pigeon-drawing/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://davtyan.org/blog-images/pigeon.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Analysis of Federated Data</title>
+      <link>https://martinthenext.github.io/post/search/</link>
+      <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/search/</guid>
+      <description>&lt;p&gt;There has been a lot of reading and searchnig recently, with no particular results. As people of science keep repeating, lack of results is a result in itself, so I&amp;rsquo;ll just write down what was happening to try to understand where to go further.&lt;/p&gt;
+
+&lt;p&gt;I was trying to find a field of Statistics or Machine Learning which deals with data gathered from different data sources.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Asked the professor who deals with Missing Data. Doesn&amp;rsquo;t know of any research in that field.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Aksed the professor who deals with Regression. Same.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Asked &lt;a href=&#34;http://stats.stackexchange.com/questions/89086/statistical-analysis-on-several-data-sources-possible&#34;&gt;people on CrossValidated&lt;/a&gt;. Nothing rings the bell.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The closest resource I could find that talks about dealing with multiple data sources when there is an explicit knowledge about their structure is &lt;a href=&#34;http://ontolog.cim3.net/cgi-bin/wiki.pl?OntologySummit2014_Tackling_Variety_In_BigData_CommunityInput&#34;&gt;Ontology Summit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also, there are some pointers to places where ontologies or other knowledge respesentation could be used with data analysis:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Graphical Models: DAGs represent causal relationsips between variables.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;www.geneontology.org&#34;&gt;Gene Ontology&lt;/a&gt; is somehow used in data analysis.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But the main idea I got from searching for connections between Statistics and Ontologies is that the latter is way harder to find. Hence, if searching for data analysis problems in a domain where Ontologies are used must be easier than searching for usage of Onotolgies over all data analysis applications.&lt;/p&gt;
+
+&lt;p&gt;By now, situation is pretty severe. I have an idea about some problem being very important to solve, but cannot find any people solving it. This can only be resolved by me finding &lt;em&gt;data&lt;/em&gt; to solve the problem myself. &lt;strong&gt;Data should be probably from the data integration world&lt;/strong&gt;, for the reason highlighted earlier, and the offer should be to perform statistical analysis on it. I&amp;rsquo;m trying to look into multiple projects for integrating biomedical data, included automated diagnosis projects. I should also take a look at different industries.&lt;/p&gt;
+
+&lt;p&gt;More news to come.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to fix soft sciences (with example in medicine)</title>
+      <link>https://martinthenext.github.io/post/medicine/</link>
+      <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/medicine/</guid>
+      <description>
+
+&lt;p&gt;Any article with a shouting title like that is probably written by someone who has no idea about what he/she is talking about. At least this one is: I have a Computer Science/Engineering background and never been a researcher in any kind of soft science. Nevertheless, looking at soft sciences from technical prospective may result in some interesting insights. I personally found the idea behind this article so amazing it made me want to quit everything I was doing and &lt;em&gt;do something about it&lt;/em&gt;. So I feel the shouting title is appropriate.&lt;/p&gt;
+
+&lt;h3 id=&#34;what-s-the-problem:1fc668c97323b60ac653aa34a122a8e1&#34;&gt;What&amp;rsquo;s the problem?&lt;/h3&gt;
+
+&lt;p&gt;People who at some point understood the power of mathematics and natural sciences, including people in tech world, tend to have an opinion that soft sciences are not actual sciences. The reason for this attitude might be &lt;em&gt;lack of predictive power&lt;/em&gt;. Indeed, in natural sciences we have nicely repeatable experiments: whenever you throw a rock from the same height, it will take the same time to reach ground. This allows researchers in natural sciences to come up with simple models that have a great predictive power: using them not only you can say what time it will take a rock to fall from a different height, you can send a rocket to Mars for the first time ever and know exactly what would happen. In comparison, in soft sciences models are complicated and experiments not repeatable.&lt;/p&gt;
+
+&lt;p&gt;One great value of science is that it helps us answer &lt;em&gt;practical&lt;/em&gt; question. Natural sciences through engineering give you pretty precise answers to a lot of these. How do you build a bridge without wasting too much material? How do you make faster/safer transport? If you want to build something, models from natural sciences will help you.&lt;/p&gt;
+
+&lt;p&gt;How do you run a government so that people are most satisfied? How do you teach a language in a most efficient way? How to be healthy? As soft sciences have to answer these questions, they don&amp;rsquo;t have precise answers just yet. Some people say that it is because we didn&amp;rsquo;t pay enough attention to them and in some time they will become as &amp;lsquo;mathy&amp;rsquo;/precise as physics is. I tend to stick to &lt;a href=&#34;http://en.wikipedia.org/wiki/Human_Action&#34;&gt;von Mises&amp;rsquo;s&lt;/a&gt; opinion on a difference between mechanistic and teleological paradigms, but even it soft sciences are going to become mathematical at some point, now there&amp;rsquo;s not much of math in them - mostly statistics.&lt;/p&gt;
+
+&lt;h3 id=&#34;why-would-you-care:1fc668c97323b60ac653aa34a122a8e1&#34;&gt;Why would you care&lt;/h3&gt;
+
+&lt;p&gt;We still need answers, that&amp;rsquo;s why. We need to know what is a healthy diet, how to build effective societies and develop poor countries. Inability to get precise answers to these questions is awful. However dissatisfied we are with the result of soft science researchers&amp;rsquo; work, the problems they are trying to solve are real.&lt;/p&gt;
+
+&lt;h3 id=&#34;human-expertise:1fc668c97323b60ac653aa34a122a8e1&#34;&gt;Human expertise&lt;/h3&gt;
+
+&lt;p&gt;When we are trying to answer a question about building bridges we go with models from natural sciences and derive our answer from them because natural sciences are good enough.  But using the same pattern in soft science related questions might be a mistake. &lt;em&gt;Why do we look for an answer about building societies like we&amp;rsquo;re searching for an answer about building bridges&lt;/em&gt;?&lt;/p&gt;
+
+&lt;p&gt;There are some questions we don&amp;rsquo;t use &lt;em&gt;knowledge&lt;/em&gt; for answering, we use &lt;em&gt;experience&lt;/em&gt;. There is not much science for artistic painting or making music. There is also no scientific book describing precise algorithm of being a good sales manager or designer - meaningful books are those describing their experience so that you can learn from it if it&amp;rsquo;s relevant.&lt;/p&gt;
+
+&lt;p&gt;Would a person trying to become a good designer learn from books containing other people&amp;rsquo;s experience? Yes. Will this person then be able to better answer practical questions in their field? Yes. Would it be possible for this person to somehow transfer their skill to other people without describing experience, like we do with bridge building skill through engineering textbooks? Not necessarily.&lt;/p&gt;
+
+&lt;p&gt;An expert is a person who somehow has an appropriate experience in a field. We need experts because knowledge is not always transferable. For some sort of questions it doesn&amp;rsquo;t look transferable at all. If we want to be able to get good answers for this type of questions, we have to somehow transfer experience instead.&lt;/p&gt;
+
+&lt;h3 id=&#34;transferring-experience-example-collaborative-filtering:1fc668c97323b60ac653aa34a122a8e1&#34;&gt;Transferring experience. Example: Collaborative filtering.&lt;/h3&gt;
+
+&lt;p&gt;The concept of making experience based system instead of model based one can be easily illustrated with the example of collaborative filtering.&lt;/p&gt;
+
+&lt;p&gt;Suppose you&amp;rsquo;re asked to make a system for predicting what a user would most likely want to buy from one shop, and it&amp;rsquo;s 1980. You have this one expensive machine you can use for that purpose. What you do is look up some paper (&lt;em&gt;model&lt;/em&gt;) from researchers in Marketing and use this &lt;em&gt;model&lt;/em&gt; to compute stuff people would buy in your shop. The problem is that this model would never fit your shop because it&amp;rsquo;s been fitted on someone else&amp;rsquo;s shop.&lt;/p&gt;
+
+&lt;p&gt;In some time machines start to become more powerful and now you can actually fit the model on your own shop&amp;rsquo;s data once in a while, and then use the model to predict what people would like. At some point machines are powerful enough to allow for &lt;a href=&#34;http://en.wikipedia.org/wiki/Collaborative_filtering&#34;&gt;collaborative filtering&lt;/a&gt; - you don&amp;rsquo;t fit a model any more. You&amp;rsquo;re virtually running ad hoc query on all your shop&amp;rsquo;s data every time you need to predict user&amp;rsquo;s preferences. You dismissed a &lt;em&gt;model&lt;/em&gt; to go with &lt;em&gt;experience&lt;/em&gt; - it works better.&lt;/p&gt;
+
+&lt;p&gt;The reason why model for prediction of personal preferences to be outperformed by some distance-based method might be it&amp;rsquo;s complexity. That points to the fact that if models are not simple enough, it should be always better to go with experience - as long as the infrastructure allows it.&lt;/p&gt;
+
+&lt;h3 id=&#34;medicine:1fc668c97323b60ac653aa34a122a8e1&#34;&gt;Medicine&lt;/h3&gt;
+
+&lt;p&gt;If everything is the way I see it, a great goal of our time (yes, I seriously think that) would be to develop infrastructure and tools for people to gather, exchange and analyze experiences of each other in all kinds of fields. I&amp;rsquo;ve been &lt;a href=&#34;http://scriptogr.am/martinthenext/post/direction-for-2014&#34;&gt;interested&lt;/a&gt; in health and &lt;a href=&#34;http://www.youtube.com/watch?v=SxVJoKqrOsI&#34;&gt;medicine&lt;/a&gt; for some time, this is why I decided to make an example in this field. That&amp;rsquo;s nothing but a way for me demonstrate a concept - I need &lt;em&gt;way&lt;/em&gt; more knowledge about how hospitals and doctors work befor I can even talk about what actually needs to be done. But the general idea should be right.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davtyan.org/blog-images/xx.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Currently doctors are being trained &lt;em&gt;medical science&lt;/em&gt; for years and then required to get at least 3 years of &lt;em&gt;experience&lt;/em&gt; before they are allowed to practice themselves. That might be a good indication about how experience is important in medical profession! Medical science seems to be pretty diverse and complicated - so complicated a lot of effort has been put into developing tools allowing doctors to explore relevant parts of it using computers - like &lt;a href=&#34;http://protege.stanford.edu/&#34;&gt;Protege&lt;/a&gt; ontology editor.&lt;/p&gt;
+
+&lt;p&gt;Could be, though, that medical models contained in &lt;em&gt;knowledge&lt;/em&gt; are less valuable than &lt;em&gt;experience&lt;/em&gt; - factual information about different medical cases. Imagine a doctor considering patient&amp;rsquo;s medical case. It would be cool to allow her run queries against all medical history of all patients on Earth. This could turn out nice like in the collaborative filtering example above - models are complicated, relevant experience is valuable. Running ad hoc analysis on cases relevant to one particular case could be extremely useful. We just have to build appropriate infrastructure.&lt;/p&gt;
+
+&lt;p&gt;On the picture I show ontologies as a way to link hospital databases to some kind of unified terminological resource, allowing for data integration between them. This is something I had a tiny bit of experience in a magical field of Systems Engineering, and it works for data integration in industry.&lt;/p&gt;
+
+&lt;p&gt;Unification of data from different medical sources can allow for performing queries and analysis over the whole body of data. Some interesting modification to widespread machine learning / statistical methods might be required for using them in a situation where data structure is inconsistent.&lt;/p&gt;
+
+&lt;h3 id=&#34;summary:1fc668c97323b60ac653aa34a122a8e1&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;In trying to find answers to questions about society, language, health and other important topics in areas where we can&amp;rsquo;t have repeatable experiments and simple models, &lt;em&gt;experience&lt;/em&gt; is more important than &lt;em&gt;knowledge&lt;/em&gt;/science/models. Hence development of tools allowing field experts/interested people access and run ad-hoc data analysis queries on relevant historical/factual data would be more important than development of scientific models in these areas. Continuous development of computer technology would allow to perform such ad-hoc queries for increasingly bigger data amounts.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Direction for 2014</title>
+      <link>https://martinthenext.github.io/post/directions2014/</link>
+      <pubDate>Sat, 04 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/directions2014/</guid>
+      <description>
+
+&lt;p&gt;As my &amp;lsquo;figuring out what to do in life&amp;rsquo; process seems to be neverending, which is annoying and great at the same time, keeping some direction in mind to think and work on can be hard. Not to feel completely lost in a sea of different interesting and exciting stuff I sometimes make attempts to systematize major things I&amp;rsquo;ve been thinking about for a long time to get a sense of where to go next. Although 2013 was very fruitful in terms of different stuff I tried and learned, it looks like I&amp;rsquo;m getting somewhere with incentive to narrow down my interests.&lt;/p&gt;
+
+&lt;p&gt;My first attempt was in &lt;a href=&#34;http://martinthenext.livejournal.com/70704.html&#34;&gt;Mission statement&lt;/a&gt; of 2012 (Russian), where I talk about how it&amp;rsquo;s important to get rid of managers in different production/business processes and substitute them with smart data integration/exchange wherever possible. The last attempt was already in this blog and, although the name suggests it&amp;rsquo;s about Food), has a general idea is about substituting domain expertise (and experts) with smart data exchange wherever possible.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m an old fan of Richard Feynman&amp;rsquo;s &lt;a href=&#34;http://www.youtube.com/watch?v=9kirzr6lnSs&#34;&gt;disrespect the respectable&lt;/a&gt; approach and fields of human activity in which this approach proved to be successful - mathematics, natural sciences and engineering. Emerging technology will help people do more and more things on their own or in small groups, with little to no help of authorities/experts/governments. &lt;a href=&#34;http://opensourceecology.org/&#34;&gt;Build tractors themselves&lt;/a&gt;. 3D-print all kinds of stuff themselves. Cooperate effectively on all kinds of activities using the Internet, with no centralized authority involved.&lt;/p&gt;
+
+&lt;p&gt;Coursera is a nice example of how the general process should be - we&amp;rsquo;re not getting rid of experts, technology just allows us to use their time more wisely. We can record lectures and show them to millions of people, and get professors to answer the most popular unanswered student questions only. The same should happen to medicine, when we stop wasting doctors&amp;rsquo; time on checkups patients can do themselves, and to many other fields of human competence. I don&amp;rsquo;t know if anyone invented a term for this direction of applied technology, let&amp;rsquo;s call it &lt;strong&gt;computer-aided self-sufficiency&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;A good collection of thoughts on the subject with connection to medicine is on Stanford&amp;rsquo;s Medicine X &lt;a href=&#34;http://www.youtube.com/watch?v=SxVJoKqrOsI&#34;&gt;closing keynote by Vinod Khosla&lt;/a&gt;. The talk includes a fair portion of &amp;lsquo;loud&amp;rsquo; statements, but has a lot of food for thought as well. Especially the passage about the study on experts:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;hellip; measured his experts on two dimensions: how good they were at guessing probabilities (did all the things they said had an x per cent chance of happening happen x per cent of the time?), and how accurate they were at predicting specific outcomes. The results were unimpressive. On the first scale, the experts performed worse than they would have if they had simply assigned an equal probability to all three outcomes—if they had given each possible future a thirty-three-per-cent chance of occurring. Human beings who spend their lives studying the state of the world, in other words, are poorer forecasters than dart-throwing monkeys, who would have distributed their picks evenly over the three choices.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And wow, this sounds like something &lt;a href=&#34;http://www.stanford.edu/~natalya/&#34;&gt;Natasha Noy&lt;/a&gt; said when giving a talk in UZH on &lt;a href=&#34;http://www.stanford.edu/~natalya/papers/HCompOntologyEvaluation_WebSci.pdf&#34;&gt;crowdsourcing medical ontology&lt;/a&gt;. It sometimes appeared the crowd of random people on Mechanical Turk, using only common sense to guess pieces of medical knowledge ontology, did better than experts.­&lt;/p&gt;
+
+&lt;p&gt;The task is to &lt;em&gt;help people work and cooperate on different stuff with more of cheap computer help and less of expensive human help. This, by the way, includes helping experts work with each other in a more effective manner, without the help of manages or what not&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;objections:a43e98a7f239910c3272064a98541324&#34;&gt;Objections&lt;/h1&gt;
+
+&lt;p&gt;When I discuss these ideas with people, whatever the area of human life it is, objections tend to follow the same pattern.&lt;/p&gt;
+
+&lt;p&gt;Politics: people solving their problems / organizing themselves, with no need for government to intervene. &lt;em&gt;Objection&lt;/em&gt;: most people are dumb, they don&amp;rsquo;t have incentive to solve their own problems.&lt;/p&gt;
+
+&lt;p&gt;Medicine: people performing tests on themselves, consulting doctor if case is non-trivial only. &lt;em&gt;Objection&lt;/em&gt;: most people are dumb, they will be mislead by written advice if not guided at every step.&lt;/p&gt;
+
+&lt;p&gt;Internet: people having access to all information available and being able to speak anonymously. &lt;em&gt;Objection&lt;/em&gt;: most people are dumb, they will be unable to distinguish between true and false information, tricked into suicide by pro-ANA websites and damaged by gore content, if not explicitly restricted to only accessing safe resources.&lt;/p&gt;
+
+&lt;p&gt;I figured out I have nothing to say in return. As a matter of fact, recently I&amp;rsquo;ve decided to keep myself away from political discussions: we always end up talking about what&amp;rsquo;s best for the &lt;em&gt;most&lt;/em&gt; of people. I have no idea really, I&amp;rsquo;ve never met most of the people. My social circle is mostly restricted to relatively young professionals. So, I&amp;rsquo;ve decided I would rather try and solve their problems and just make sure my solutions are &amp;lsquo;scalable&amp;rsquo;.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-do:a43e98a7f239910c3272064a98541324&#34;&gt;What do&lt;/h1&gt;
+
+&lt;p&gt;By far the vague idea of what&amp;rsquo;s interesting is expressed. The hard question is how to get there :) Two application areas that seem most exciting to me is space engineering and health care. In space engineering they have a lot of systems-engineering/data integration related stuff, which is exciting. Sad thing space industry seems pretty government-related still (SpaceX, for example, only accepts US citizens, European Space Agency only accepts EU citizens, no luck for a citizen of an enemy country). So trying to do something with healthcase/medicine looks easier.&lt;/p&gt;
+
+&lt;p&gt;It looks like you can start on solving healthcare problems from two opposite sides:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Patient side - develop tools for patients/health-aware people to learn good practices and exchange experiences maintaining their health. This is a side of Stanford Medicine X, QuantifiedSelf, JawBone, 23andme, Dacadoo, etc.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Doctor side - develop tools for doctors to be more effective with processing information. This is a side of &lt;a href=&#34;http://bmir.stanford.edu/&#34;&gt;Stanford BMIR&lt;/a&gt; (where they built &lt;a href=&#34;http://protege.stanford.edu/&#34;&gt;Protege&lt;/a&gt;) and a whole lot of cool academic projects, including the one I&amp;rsquo;m working in right now :)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I&amp;rsquo;ve already did a tiny bit of thinking on both sides, and by now it&amp;rsquo;s hard to say what side is better to stick to. We&amp;rsquo;ll see.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nice grouping in Python</title>
+      <link>https://martinthenext.github.io/post/nice-grouping-in-python/</link>
+      <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/nice-grouping-in-python/</guid>
+      <description>&lt;p&gt;Just found another cute python recipe:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;In: l = [&#39;a&#39;, &#39;b&#39;, &#39;b&#39;, &#39;c&#39;, &#39;a&#39;]
+In: [(group, l.count(group)) for group in set(l)]
+Out: [(&#39;a&#39;, 2), (&#39;c&#39;, 1), (&#39;b&#39;, 2)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Because &lt;code&gt;itertools.groupby&lt;/code&gt; is kind of clumsy for simple use cases.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>I love python</title>
+      <link>https://martinthenext.github.io/post/ilovepython/</link>
+      <pubDate>Mon, 09 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/ilovepython/</guid>
+      <description>&lt;p&gt;This:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt;class some_class(object):
+...  def beep(self):
+...    print &#39;beep&#39;
+
+&amp;gt;&amp;gt;&amp;gt;# passing class as a parameter
+...def do(cls):
+...  inst = cls()
+...  inst.beep()
+
+&amp;gt;&amp;gt;&amp;gt;do(some_class)
+beep
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Also, &lt;a href=&#34;http://scikit-learn.org/&#34;&gt;sklearn&lt;/a&gt; is amazing - well documented and really easy to use.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ode to meritocracy</title>
+      <link>https://martinthenext.github.io/post/meritocrasy/</link>
+      <pubDate>Sun, 17 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/meritocrasy/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.rwagner.net/libretti/meisters/e-meisters-a3s5.html&#34;&gt;Die Meistersinger von Nürnberg&lt;/a&gt; by Wagner:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Scorn not the Masters, I bid you,&lt;/p&gt;
+
+&lt;p&gt;and honour their art!&lt;/p&gt;
+
+&lt;p&gt;What speaks high in their praise&lt;/p&gt;
+
+&lt;p&gt;fell richly in your favour.&lt;/p&gt;
+
+&lt;p&gt;Not to your ancestors, however worthy,&lt;/p&gt;
+
+&lt;p&gt;not to your coat-of-arms, spear, or sword,&lt;/p&gt;
+
+&lt;p&gt;but to the fact that you are a poet,&lt;/p&gt;
+
+&lt;p&gt;that a Master has admitted you -&lt;/p&gt;
+
+&lt;p&gt;to that you owe today your highest happiness.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fridges are magical</title>
+      <link>https://martinthenext.github.io/post/fridge1/</link>
+      <pubDate>Fri, 15 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/fridge1/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://davtyan.org/blog-images/fridge3scaled.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Food</title>
+      <link>https://martinthenext.github.io/post/food/</link>
+      <pubDate>Tue, 29 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/food/</guid>
+      <description>&lt;p&gt;Now that it looks that the time I have to spend on cooking is about the same for healthy balanced foods and weird processed stuff, I&amp;rsquo;ve decided to start eating healthy. First, guess what, I&amp;rsquo;ve read a Wikipedia article called &amp;lsquo;Healthy diet&amp;rsquo;. Next, I&amp;rsquo;ve searched for some scientific books on the subject. In the end, I stumbled upon &lt;a href=&#34;http://michaelpollan.com/articles-archive/unhappy-meals/&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Basically, the guy claims that science of nutrition is not developed enough to use it as a proper tool for choosing a diet. There are a lot of important things that are unknown. He suggests to dismiss science and go with &lt;strong&gt;culture&lt;/strong&gt; - accumulated practices of people&amp;rsquo;s dietary habits.&lt;/p&gt;
+
+&lt;p&gt;I totally agree with the idea of dismissing science and sticking with culture sometimes, if author&amp;rsquo;s evaluation of the state of nutrition science is valid, this is by all means the best way to proceed. One complication I can see here, which is also mentioned by the author, is that backgrounds that caused one or another diet to emerge historically, might have vanished, making the underlying reasons to follow the diet less valid.&lt;/p&gt;
+
+&lt;p&gt;We cannot just go and try to eat exactly what our grand-grand parents ate and hope it&amp;rsquo;s the best choice - it&amp;rsquo;s probably not. They have been doing different things - for instance, they probably had a whole lot more of physical exercise. Also, food that was in their possession differed from ours strongly. It looks like our world is too &lt;strong&gt;different&lt;/strong&gt; to mimic old practices.&lt;/p&gt;
+
+&lt;p&gt;It does not, though, invalidate the idea of mimicking practices from each other. If we have some tool to understand some practice works more or less right now in certain conditions, we might want to use it. I really like the idea of somehow facilitating useful practices - because it looks like currently there is quite a lot of important life questions (like diet) in which science doesn&amp;rsquo;t seem to help a lot by far. One could argue that coming back to copying practices is anti-scientific. It looks to me really pro-scientific, thought. The problem of soft-sciences, for instance, is lack of a body of knowledge to generalize from. Food scientists seem to struggle with surveys and expensive experiments, trying to get people to tell them what they eat. If there is a tool allowing people to try adopting certain diets and then tracking themselves, the knowledge of what practices (diets) are better will emerge soon.&lt;/p&gt;
+
+&lt;p&gt;What I can think of now is Google Glass recognizing food that you eat and logging it. I also think about guys from &amp;lsquo;Quantified Self&amp;rsquo;. I need to think about it more, though.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A post about innovation to remember</title>
+      <link>https://martinthenext.github.io/post/innovation/</link>
+      <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/innovation/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.worldpolicy.org/journal/fall2011/innovation-starvation&#34;&gt;Innovation Starvation&lt;/a&gt; by Neal Stephenson&lt;/p&gt;
+
+&lt;p&gt;Brilliant explanation about how rational risk-averse behavior is in some sense opposite to innovation.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Managing 21 Century Organizations</title>
+      <link>https://martinthenext.github.io/post/organizations/</link>
+      <pubDate>Sun, 20 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/organizations/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve got interested in corporate network analysis and read an article called &lt;a href=&#34;http://www.orgnet.com/Managing21CenturyOrganization.pdf&#34;&gt;&amp;ldquo;Managing 21 Century Organizations&amp;rdquo;&lt;/a&gt; by Valdis Krebs. In his article he says:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If the knowledge that you seek is not within your network horizon (one or two steps), then you assume it is not available in your organization and you reinvent it, or pay for it on the outside.&lt;/p&gt;
+
+&lt;p&gt;The natural response in many organizations is to throw technology at the problem. A very poor, yet quite common, solution is to attempt to &lt;em&gt;mine&lt;/em&gt; knowledge from employees, codify it, and store it in a large database. Many large consulting firms tried this approach in the 1990s with usually sub-par results. They found that people were not always willing to make public their best knowledge and that codifying tacit knowledge was like trying to nail jelly to the wall. It did not work, and just left a mess.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I can picture employees not willing to formalize their knowledge and fill in a corporate wiki, as it requires extra effort. But it can be the case that the tools people use to collaborate with each other already require some kind of a formalism, that allows to mine knowledge.&lt;/p&gt;
+
+&lt;p&gt;Take a corporate task of determining different people&amp;rsquo;s impact on the advancement of the project. If the project is about writing code, people use GIT and the &lt;strong&gt;formalism&lt;/strong&gt; it introduces to the workflow is enough to draw this kinds of conclusions. It is possible to analyze code commits from an employee and determine whether it is cruicial/useful for the project. If you have a issue tracker, you can easily see what people solve what kind of tasks, which parts of project cause more problems, etc.&lt;/p&gt;
+
+&lt;p&gt;Having a collaboration tool with a useful formalism allows us to understand the project dynamics better. One problem to solve is to get this idea outside of the coding world - this I described in a (russian) &lt;a href=&#34;http://martinthenext.livejournal.com/70704.html&#34;&gt;mission statement&lt;/a&gt; about a year ago. Ways to do it something that interests me the most.&lt;/p&gt;
+
+&lt;p&gt;Some people say sooner or later any kind of a qualified employee will need to know how to code - computer technologies made their way to all kinds of applications. First, corporate IT people would just develop a system for a specific industry, then, to make a system more adjustable, introduce ways for industry people to fine-tune it, like clumsy XML specification files. Then, DSLs would come about, bringing domain-aware people closer to programming. It makes me think that the more we use computers in any type of work, the more successful the attempts to find a proper formalizm would be.&lt;/p&gt;
+
+&lt;p&gt;Another thing that came about after Mr. Krebs wrote his article (2007) is those huge social networks we&amp;rsquo;re all on now. If people are using computer tools to exchange purely emotional, non-constuctive information about their daily life, there is surely a way to make them use something more sophisticated than email in their work.&lt;/p&gt;
+
+&lt;p&gt;We need to build a new GitHub for biomedical people, a new Bitbucket for chemical engineers and a new JIRA for architects, the sooner the better. Pretty sure it&amp;rsquo;s gonna work this time.&lt;/p&gt;
 </description>
     </item>
     
