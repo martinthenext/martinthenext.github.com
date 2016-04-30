@@ -18,7 +18,7 @@
       <guid>https://martinthenext.github.io/post/hugo/</guid>
       <description>&lt;p&gt;If you are reading this, I actually succeeded in setting up &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; for static site generation. It is written in Go, fast and cross-platform.&lt;/p&gt;
 
-&lt;p&gt;Traditionally, I judge website designs by the way they can highlight code. This code, by the way, is the best thing I have seen in a year or so:&lt;/p&gt;
+&lt;p&gt;Traditionally, I judge website designs by the way they can highlight code. This code, by the way, is the best thing I have seen in a year or so (originally from &lt;a href=&#34;http://stackoverflow.com/a/22919323/211223&#34;&gt;StackOverflow&lt;/a&gt;):&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;def iter_split_by(n, iterator):                         
     &amp;quot;&amp;quot;&amp;quot; Split an iterator into groups of n elements                                  
