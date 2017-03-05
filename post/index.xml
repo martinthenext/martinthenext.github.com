@@ -11,6 +11,18 @@
     <atom:link href="https://martinthenext.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Fridges are magical - Islington</title>
+      <link>https://martinthenext.github.io/post/fridge-islington/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://martinthenext.github.io/post/fridge-islington/</guid>
+      <description>&lt;p&gt;While I have been working on &lt;a href=&#34;https://github.com/martinthenext/daytobase&#34;&gt;daytobase&lt;/a&gt; quite a bit recently, I am not ready to &amp;lsquo;release&amp;rsquo; it quite yet. So let me just post some fridge photos instead.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://davtyan.org/blog-images/fridge-islington.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Fridges are magical - Saint Petersburg</title>
       <link>https://martinthenext.github.io/post/fridge-spb/</link>
       <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
@@ -354,18 +366,6 @@ beep
 &lt;p&gt;It does not, though, invalidate the idea of mimicking practices from each other. If we have some tool to understand some practice works more or less right now in certain conditions, we might want to use it. I really like the idea of somehow facilitating useful practices - because it looks like currently there is quite a lot of important life questions (like diet) in which science doesn&amp;rsquo;t seem to help a lot by far. One could argue that coming back to copying practices is anti-scientific. It looks to me really pro-scientific, thought. The problem of soft-sciences, for instance, is lack of a body of knowledge to generalize from. Food scientists seem to struggle with surveys and expensive experiments, trying to get people to tell them what they eat. If there is a tool allowing people to try adopting certain diets and then tracking themselves, the knowledge of what practices (diets) are better will emerge soon.&lt;/p&gt;
 
 &lt;p&gt;What I can think of now is Google Glass recognizing food that you eat and logging it. I also think about guys from &amp;lsquo;Quantified Self&amp;rsquo;. I need to think about it more, though.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A post about innovation to remember</title>
-      <link>https://martinthenext.github.io/post/innovation/</link>
-      <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://martinthenext.github.io/post/innovation/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.worldpolicy.org/journal/fall2011/innovation-starvation&#34;&gt;Innovation Starvation&lt;/a&gt; by Neal Stephenson&lt;/p&gt;
-
-&lt;p&gt;Brilliant explanation about how rational risk-averse behavior is in some sense opposite to innovation.&lt;/p&gt;
 </description>
     </item>
     
