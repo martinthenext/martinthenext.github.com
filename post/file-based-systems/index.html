@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.19" />
         <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://martinthenext.github.io/css/normalize.css">
@@ -80,7 +80,7 @@
 
 <p>The core concept of document-oriented databases is that we have some a priori knowledge about a data structure of documents we store. For instance, in CouchDB or MongoDB we are aware that any document is an associative array. This knowledge allows us to query document sets with something like <code>(get all documents where 'age' attribute is 18)</code> or <code>(get all documents where 'published' is True)</code>.</p>
 
-<h2 id="file-system-is-the-best-document-db-ever:4167394b6c552f4a36e9525b462481a0">File system is the best document DB ever</h2>
+<h2 id="file-system-is-the-best-document-db-ever">File system is the best document DB ever</h2>
 
 <p>The concept of scriptogr.am got me thinking that a file system is a perfect document-oriented database. Not only it stores documents, reads/writes them by <code>id</code>, it has the most usable user interface ever - provided by the operating system. There are tons of cool tools for working with files and files remain perfectly interpretable no matter what happens to your  whole system.</p>
 
@@ -99,7 +99,7 @@
 <li>Maintaining indexes, to make queries fast. Though, it is, obviously, not required to make queries.</li>
 </ul>
 
-<h2 id="using-couch:4167394b6c552f4a36e9525b462481a0">Using Couch</h2>
+<h2 id="using-couch">Using Couch</h2>
 
 <p>From all NoSQL databases I only have experience with CouchDB, but by far the most intuitive way I can imagine querying is:</p>
 
@@ -110,7 +110,7 @@
 
 <p>So, it appears that CouchDB is a solution for storing queryable data: it does all that querying and indexing stuff. We can now store all the queryable data in it, and maintain proper mapping between queryable data from documents and documents themselves. Once a document in a folder gets modified, we need to modify it&rsquo;s mapped queryable data accordingly. If we do that, CouchDB will take care of the rest and allow queries on this data.</p>
 
-<h2 id="roundup:4167394b6c552f4a36e9525b462481a0">Roundup</h2>
+<h2 id="roundup">Roundup</h2>
 
 <p>It is possible to build some sort of toolkit for turning any collection of structured files into document-oriented database. For a particular collection one needs to implement a routine that:</p>
 
@@ -185,7 +185,7 @@
                 </div>
 
                 <p class="footer-copyright">
-                    <span>&copy; 2016 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
+                    <span>&copy; 2017 / Powered by <a href="http://gohugo.io/">Hugo</a></span>
                 </p>
                 <p class="footer-copyright">
                     <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
