@@ -2,12 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Martin Davtyan</title>
-    <link>https://martinthenext.github.io/tags/r/index.xml</link>
+    <link>https://martinthenext.github.io/tags/r/</link>
     <description>Recent content in R on Martin Davtyan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Martin Davtyan</copyright>
-    <atom:link href="https://martinthenext.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Jul 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://martinthenext.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>R Cheat Sheet</title>
@@ -15,8 +18,7 @@
       <pubDate>Tue, 23 Jul 2013 00:00:00 +0000</pubDate>
       
       <guid>https://martinthenext.github.io/post/computational-statistics-homework-explained/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.dropbox.com/s/7hghvd3o28gr73b/RCheatSheet.pdf&#34;&gt;R Cheat Sheet&lt;/a&gt; for the Computational Statistics class at ETH.&lt;/p&gt;
-</description>
+      <description>R Cheat Sheet for the Computational Statistics class at ETH.</description>
     </item>
     
     <item>
@@ -25,31 +27,9 @@
       <pubDate>Thu, 23 May 2013 00:00:00 +0000</pubDate>
       
       <guid>https://martinthenext.github.io/post/sweave-sublime/</guid>
-      <description>&lt;p&gt;To be able to edit R Sweave files in Sublime and render them to pdf&amp;rsquo;s with one click you can do the following.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;1. Create a batch file&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;This &lt;code&gt;run-sweave.bat&lt;/code&gt; file will take your Snw file as an argument and output a pdf to the same directory. It will also call Adobe Reader to preview the pdf, don&amp;rsquo;t forget to change the last part to your actual Adobe Reader path.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;@echo off
-set filename=%1
-set name=%filename:~0,-4%
-R CMD Sweave --encoding=&amp;quot;utf-8&amp;quot; %name%.Snw
-pdflatex %name%.tex
-&amp;quot;C:\Program Files (x86)\Adobe\Reader 11.0\Reader\AcroRd32.exe&amp;quot; %name%.pdf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;2. Link this batch file in a build system&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Create a new build system in Sublime with a simple config:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;cmd&amp;quot;: [&amp;quot;C:/run-sweave.bat&amp;quot;, &amp;quot;$file&amp;quot;]
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The location of the file, of course, should be altered as well.&lt;/p&gt;
-</description>
+      <description>To be able to edit R Sweave files in Sublime and render them to pdf&amp;rsquo;s with one click you can do the following.
+1. Create a batch file
+This run-sweave.bat file will take your Snw file as an argument and output a pdf to the same directory. It will also call Adobe Reader to preview the pdf, don&amp;rsquo;t forget to change the last part to your actual Adobe Reader path.</description>
     </item>
     
   </channel>
